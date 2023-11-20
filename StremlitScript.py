@@ -1,7 +1,6 @@
 import os
 import json
 import pickle
-import matplotlib.pyplot as plt
 import pandas as pd
 import streamlit as st
 from dotenv import load_dotenv
