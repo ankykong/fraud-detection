@@ -4,6 +4,24 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set_theme(context='notebook', style='whitegrid', font_scale=1.2)
 import streamlit as st
+from utils.b2 import B2
+
+
+# ------------------------------------------------------
+#                      APP CONSTANTS
+# ------------------------------------------------------
+REMOTE_DATA = 'seattle_home_prices.csv'
+
+
+# ------------------------------------------------------
+#                        CONFIG
+# ------------------------------------------------------
+load_dotenv()
+
+# load Backblaze connection
+b2 = B2(endpoint=os.environ['B2_ENDPOINT'],
+        key_id=os.environ['B2_KEYID'],
+        secret_key=os.environ['B2_APPKEY'])
 
 st.write(
 '''
