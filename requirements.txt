@@ -83,4 +83,738 @@ tzlocal==5.2
 urllib3==2.0.7
 validators==0.22.0
 wcwidth==0.2.9
-zipp==3.17.0
+zipp==3.17.0Name: absl-py
+Version: 2.0.0
+Requires: 
+Name: aiohttp
+Version: 3.8.3
+Requires: aiosignal, async-timeout, attrs, charset-normalizer, frozenlist, multidict, yarl
+Name: aiosignal
+Version: 1.3.1
+Requires: frozenlist
+Name: altair
+Version: 5.1.2
+Requires: jinja2, jsonschema, numpy, packaging, pandas, toolz, typing-extensions
+Name: anyio
+Version: 4.0.0
+Requires: exceptiongroup, idna, sniffio
+Name: appnope
+Version: 0.1.3
+Requires: 
+Name: argon2-cffi
+Version: 23.1.0
+Requires: argon2-cffi-bindings
+Name: argon2-cffi-bindings
+Version: 21.2.0
+Requires: cffi
+Name: arrow
+Version: 1.2.3
+Requires: python-dateutil
+Name: asttokens
+Version: 2.4.0
+Requires: six
+Name: astunparse
+Version: 1.6.3
+Requires: six, wheel
+Name: async-lru
+Version: 2.0.4
+Requires: typing-extensions
+Name: async-timeout
+Version: 4.0.2
+Requires: 
+Name: attrs
+Version: 23.1.0
+Requires: 
+Name: Babel
+Version: 2.13.0
+Requires: 
+Name: backcall
+Version: 0.2.0
+Requires: 
+Name: bardapi
+Version: 0.1.38
+Requires: browser-cookie3, colorama, deep-translator, google-cloud-translate, httpx, langdetect, requests
+Name: beautifulsoup4
+Version: 4.12.2
+Requires: soupsieve
+Name: binaryornot
+Version: 0.4.4
+Requires: chardet
+Name: bleach
+Version: 6.1.0
+Requires: six, webencodings
+Name: blinker
+Version: 1.7.0
+Requires: 
+Name: blis
+Version: 0.7.11
+Requires: numpy
+Name: browser-cookie3
+Version: 0.19.1
+Requires: lz4, pycryptodomex
+Name: cachetools
+Version: 5.3.1
+Requires: 
+Name: catalogue
+Version: 2.0.10
+Requires: 
+Name: certifi
+Version: 2022.9.24
+Requires: 
+Name: cffi
+Version: 1.15.1
+Requires: pycparser
+Name: chardet
+Version: 5.0.0
+Requires: 
+Name: charset-normalizer
+Version: 2.1.1
+Requires: 
+Name: click
+Version: 8.1.3
+Requires: 
+Name: cloudpathlib
+Version: 0.15.1
+Requires: typing_extensions
+Name: cloudpickle
+Version: 2.2.0
+Requires: 
+Name: colorama
+Version: 0.4.6
+Requires: 
+Name: comm
+Version: 0.1.4
+Requires: traitlets
+Name: commonmark
+Version: 0.9.1
+Requires: 
+Name: confection
+Version: 0.1.3
+Requires: pydantic, srsly
+Name: contourpy
+Version: 1.1.1
+Requires: numpy
+Name: cookiecutter
+Version: 2.1.1
+Requires: binaryornot, click, Jinja2, jinja2-time, python-slugify, pyyaml, requests
+Name: cryptography
+Version: 38.0.3
+Requires: cffi
+Name: cycler
+Version: 0.12.1
+Requires: 
+Name: cymem
+Version: 2.0.8
+Requires: 
+Name: databricks-cli
+Version: 0.17.3
+Requires: click, oauthlib, pyjwt, requests, six, tabulate
+Name: datasets
+Version: 2.15.0
+Requires: aiohttp, dill, fsspec, huggingface-hub, multiprocess, numpy, packaging, pandas, pyarrow, pyarrow-hotfix, pyyaml, requests, tqdm, xxhash
+Name: dbx
+Version: 0.8.7
+Requires: aiohttp, click, cookiecutter, cryptography, databricks-cli, Jinja2, mlflow-skinny, pathspec, pydantic, pyyaml, requests, retry, rich, typer, watchdog
+Name: debugpy
+Version: 1.8.0
+Requires: 
+Name: decorator
+Version: 5.1.1
+Requires: 
+Name: deep-translator
+Version: 1.11.4
+Requires: beautifulsoup4, requests
+Name: defusedxml
+Version: 0.7.1
+Requires: 
+Name: dill
+Version: 0.3.7
+Requires: 
+Name: en-core-web-sm
+Version: 3.7.0
+Requires: spacy
+Name: entrypoints
+Version: 0.4
+Requires: 
+Name: exceptiongroup
+Version: 1.1.3
+Requires: 
+Name: executing
+Version: 2.0.0
+Requires: 
+Name: fastjsonschema
+Version: 2.18.1
+Requires: 
+Name: filelock
+Version: 3.13.1
+Requires: 
+Name: flatbuffers
+Version: 23.5.26
+Requires: 
+Name: fonttools
+Version: 4.43.1
+Requires: 
+Name: fqdn
+Version: 1.5.1
+Requires: 
+Name: frozenlist
+Version: 1.3.3
+Requires: 
+Name: fsspec
+Version: 2023.10.0
+Requires: 
+Name: gast
+Version: 0.5.4
+Requires: 
+Name: gitdb
+Version: 4.0.9
+Requires: smmap
+Name: GitPython
+Version: 3.1.29
+Requires: gitdb
+Name: google-api-core
+Version: 2.14.0
+Requires: google-auth, googleapis-common-protos, protobuf, requests
+Name: google-auth
+Version: 2.23.3
+Requires: cachetools, pyasn1-modules, rsa
+Name: google-auth-oauthlib
+Version: 1.0.0
+Requires: google-auth, requests-oauthlib
+Name: google-cloud-core
+Version: 2.3.3
+Requires: google-api-core, google-auth
+Name: google-cloud-translate
+Version: 3.12.1
+Requires: google-api-core, google-cloud-core, proto-plus, protobuf
+Name: google-pasta
+Version: 0.2.0
+Requires: six
+Name: googleapis-common-protos
+Version: 1.61.0
+Requires: protobuf
+Name: GoogleBard
+Version: 2.1.0
+Requires: httpx, prompt-toolkit, rich
+Name: grpcio
+Version: 1.59.2
+Requires: 
+Name: grpcio-status
+Version: 1.59.2
+Requires: googleapis-common-protos, grpcio, protobuf
+Name: h11
+Version: 0.14.0
+Requires: 
+Name: h2
+Version: 4.1.0
+Requires: hpack, hyperframe
+Name: h5py
+Version: 3.10.0
+Requires: numpy
+Name: hpack
+Version: 4.0.0
+Requires: 
+Name: httpcore
+Version: 1.0.2
+Requires: certifi, h11
+Name: httpx
+Version: 0.25.1
+Requires: anyio, certifi, httpcore, idna, sniffio
+Name: huggingface-hub
+Version: 0.19.3
+Requires: filelock, fsspec, packaging, pyyaml, requests, tqdm, typing-extensions
+Name: hyperframe
+Version: 6.0.1
+Requires: 
+Name: idna
+Version: 3.4
+Requires: 
+Name: importlib-metadata
+Version: 5.0.0
+Requires: zipp
+Name: ipykernel
+Version: 6.25.2
+Requires: appnope, comm, debugpy, ipython, jupyter-client, jupyter-core, matplotlib-inline, nest-asyncio, packaging, psutil, pyzmq, tornado, traitlets
+Name: ipython
+Version: 8.16.1
+Requires: appnope, backcall, decorator, exceptiongroup, jedi, matplotlib-inline, pexpect, pickleshare, prompt-toolkit, pygments, stack-data, traitlets
+Name: ipython-genutils
+Version: 0.2.0
+Requires: 
+Name: ipywidgets
+Version: 8.1.1
+Requires: comm, ipython, jupyterlab-widgets, traitlets, widgetsnbextension
+Name: isoduration
+Version: 20.11.0
+Requires: arrow
+Name: jedi
+Version: 0.19.1
+Requires: parso
+Name: Jinja2
+Version: 3.1.2
+Requires: MarkupSafe
+Name: jinja2-time
+Version: 0.2.0
+Requires: arrow, jinja2
+Name: joblib
+Version: 1.3.2
+Requires: 
+Name: json5
+Version: 0.9.14
+Requires: 
+Name: jsonpointer
+Version: 2.4
+Requires: 
+Name: jsonschema
+Version: 4.19.1
+Requires: attrs, jsonschema-specifications, referencing, rpds-py
+Name: jsonschema-specifications
+Version: 2023.7.1
+Requires: referencing
+Name: jupyter-console
+Version: 6.6.3
+Requires: ipykernel, ipython, jupyter-client, jupyter-core, prompt-toolkit, pygments, pyzmq, traitlets
+Name: jupyter-events
+Version: 0.8.0
+Requires: jsonschema, python-json-logger, pyyaml, referencing, rfc3339-validator, rfc3986-validator, traitlets
+Name: jupyter-lsp
+Version: 2.2.0
+Requires: jupyter-server
+Name: jupyter_client
+Version: 8.4.0
+Requires: jupyter-core, python-dateutil, pyzmq, tornado, traitlets
+Name: jupyter_core
+Version: 5.4.0
+Requires: platformdirs, traitlets
+Name: jupyter_server
+Version: 2.8.0
+Requires: anyio, argon2-cffi, jinja2, jupyter-client, jupyter-core, jupyter-events, jupyter-server-terminals, nbconvert, nbformat, overrides, packaging, prometheus-client, pyzmq, send2trash, terminado, tornado, traitlets, websocket-client
+Name: jupyter_server_terminals
+Version: 0.4.4
+Requires: terminado
+Name: jupyterlab
+Version: 4.0.7
+Requires: async-lru, ipykernel, jinja2, jupyter-core, jupyter-lsp, jupyter-server, jupyterlab-server, notebook-shim, packaging, tomli, tornado, traitlets
+Name: jupyterlab-pygments
+Version: 0.2.2
+Requires: 
+Name: jupyterlab-widgets
+Version: 3.0.9
+Requires: 
+Name: jupyterlab_server
+Version: 2.25.0
+Requires: babel, jinja2, json5, jsonschema, jupyter-server, packaging, requests
+Name: keras
+Version: 2.14.0
+Requires: 
+Name: kiwisolver
+Version: 1.4.5
+Requires: 
+Name: langcodes
+Version: 3.3.0
+Requires: 
+Name: langdetect
+Version: 1.0.9
+Requires: six
+Name: libclang
+Version: 16.0.6
+Requires: 
+Name: lz4
+Version: 4.3.2
+Requires: 
+Name: Markdown
+Version: 3.5
+Requires: 
+Name: MarkupSafe
+Version: 2.1.1
+Requires: 
+Name: matplotlib
+Version: 3.8.0
+Requires: contourpy, cycler, fonttools, kiwisolver, numpy, packaging, pillow, pyparsing, python-dateutil
+Name: matplotlib-inline
+Version: 0.1.6
+Requires: traitlets
+Name: mistune
+Version: 3.0.2
+Requires: 
+Name: ml-dtypes
+Version: 0.2.0
+Requires: numpy, numpy
+Name: mlflow-skinny
+Version: 2.0.0
+Requires: click, cloudpickle, databricks-cli, entrypoints, gitpython, importlib-metadata, packaging, protobuf, pytz, pyyaml, requests, sqlparse
+Name: multidict
+Version: 6.0.2
+Requires: 
+Name: multiprocess
+Version: 0.70.15
+Requires: dill
+Name: murmurhash
+Version: 1.0.10
+Requires: 
+Name: nbclient
+Version: 0.8.0
+Requires: jupyter-client, jupyter-core, nbformat, traitlets
+Name: nbconvert
+Version: 7.9.2
+Requires: beautifulsoup4, bleach, defusedxml, jinja2, jupyter-core, jupyterlab-pygments, markupsafe, mistune, nbclient, nbformat, packaging, pandocfilters, pygments, tinycss2, traitlets
+Name: nbformat
+Version: 5.9.2
+Requires: fastjsonschema, jsonschema, jupyter-core, traitlets
+Name: nest-asyncio
+Version: 1.5.8
+Requires: 
+Name: notebook
+Version: 7.0.6
+Requires: jupyter-server, jupyterlab, jupyterlab-server, notebook-shim, tornado
+Name: notebook_shim
+Version: 0.2.3
+Requires: jupyter-server
+Name: numpy
+Version: 1.25.2
+Requires: 
+Name: oauthlib
+Version: 3.2.2
+Requires: 
+Name: opt-einsum
+Version: 3.3.0
+Requires: numpy
+Name: overrides
+Version: 7.4.0
+Requires: 
+Name: packaging
+Version: 21.3
+Requires: pyparsing
+Name: pandas
+Version: 2.1.1
+Requires: numpy, python-dateutil, pytz, tzdata
+Name: pandocfilters
+Version: 1.5.0
+Requires: 
+Name: parso
+Version: 0.8.3
+Requires: 
+Name: pathspec
+Version: 0.10.2
+Requires: 
+Name: pathy
+Version: 0.10.2
+Requires: smart-open, typer
+Name: pexpect
+Version: 4.8.0
+Requires: ptyprocess
+Name: pickleshare
+Version: 0.7.5
+Requires: 
+Name: Pillow
+Version: 10.1.0
+Requires: 
+Name: platformdirs
+Version: 3.11.0
+Requires: 
+Name: plotly
+Version: 5.18.0
+Requires: packaging, tenacity
+Name: preshed
+Version: 3.0.9
+Requires: cymem, murmurhash
+Name: prometheus-client
+Version: 0.17.1
+Requires: 
+Name: prompt-toolkit
+Version: 3.0.39
+Requires: wcwidth
+Name: proto-plus
+Version: 1.22.3
+Requires: protobuf
+Name: protobuf
+Version: 4.21.9
+Requires: 
+Name: psutil
+Version: 5.9.6
+Requires: 
+Name: ptyprocess
+Version: 0.7.0
+Requires: 
+Name: pure-eval
+Version: 0.2.2
+Requires: 
+Name: py
+Version: 1.11.0
+Requires: 
+Name: pyarrow
+Version: 14.0.1
+Requires: numpy
+Name: pyarrow-hotfix
+Version: 0.5
+Requires: 
+Name: pyasn1
+Version: 0.5.0
+Requires: 
+Name: pyasn1-modules
+Version: 0.3.0
+Requires: pyasn1
+Name: pycparser
+Version: 2.21
+Requires: 
+Name: pycryptodomex
+Version: 3.19.0
+Requires: 
+Name: pydantic
+Version: 1.10.2
+Requires: typing-extensions
+Name: pydeck
+Version: 0.8.1b0
+Requires: jinja2, numpy
+Name: Pygments
+Version: 2.13.0
+Requires: 
+Name: PyJWT
+Version: 2.6.0
+Requires: 
+Name: pyparsing
+Version: 3.0.9
+Requires: 
+Name: python-dateutil
+Version: 2.8.2
+Requires: six
+Name: python-dotenv
+Version: 1.0.0
+Requires: 
+Name: python-json-logger
+Version: 2.0.7
+Requires: 
+Name: python-slugify
+Version: 7.0.0
+Requires: text-unidecode
+Name: pytz
+Version: 2022.6
+Requires: 
+Name: PyYAML
+Version: 6.0
+Requires: 
+Name: pyzmq
+Version: 25.1.1
+Requires: 
+Name: qtconsole
+Version: 5.4.4
+Requires: ipykernel, ipython-genutils, jupyter-client, jupyter-core, packaging, pygments, pyzmq, qtpy, traitlets
+Name: QtPy
+Version: 2.4.0
+Requires: packaging
+Name: referencing
+Version: 0.30.2
+Requires: attrs, rpds-py
+Name: regex
+Version: 2023.10.3
+Requires: 
+Name: requests
+Version: 2.31.0
+Requires: certifi, charset-normalizer, idna, urllib3
+Name: requests-oauthlib
+Version: 1.3.1
+Requires: oauthlib, requests
+Name: retry
+Version: 0.9.2
+Requires: decorator, py
+Name: rfc3339-validator
+Version: 0.1.4
+Requires: six
+Name: rfc3986-validator
+Version: 0.1.1
+Requires: 
+Name: rich
+Version: 12.6.0
+Requires: commonmark, pygments
+Name: rpds-py
+Version: 0.10.6
+Requires: 
+Name: rsa
+Version: 4.9
+Requires: pyasn1
+Name: safetensors
+Version: 0.4.0
+Requires: 
+Name: scikit-learn
+Version: 1.3.2
+Requires: joblib, numpy, scipy, threadpoolctl
+Name: scipy
+Version: 1.11.3
+Requires: numpy
+Name: seaborn
+Version: 0.13.0
+Requires: matplotlib, numpy, pandas
+Name: Send2Trash
+Version: 1.8.2
+Requires: 
+Name: shellingham
+Version: 1.5.0
+Requires: 
+Name: six
+Version: 1.16.0
+Requires: 
+Name: smart-open
+Version: 6.4.0
+Requires: 
+Name: smmap
+Version: 5.0.0
+Requires: 
+Name: sniffio
+Version: 1.3.0
+Requires: 
+Name: socksio
+Version: 1.0.0
+Requires: 
+Name: soupsieve
+Version: 2.5
+Requires: 
+Name: spacy
+Version: 3.7.1
+Requires: catalogue, cymem, jinja2, langcodes, murmurhash, numpy, packaging, pathy, preshed, pydantic, requests, setuptools, smart-open, spacy-legacy, spacy-loggers, srsly, thinc, tqdm, typer, wasabi, weasel
+Name: spacy-legacy
+Version: 3.0.12
+Requires: 
+Name: spacy-loggers
+Version: 1.0.5
+Requires: 
+Name: sqlparse
+Version: 0.4.3
+Requires: 
+Name: srsly
+Version: 2.4.8
+Requires: catalogue
+Name: stack-data
+Version: 0.6.3
+Requires: asttokens, executing, pure-eval
+Name: streamlit
+Version: 1.28.2
+Requires: altair, blinker, cachetools, click, gitpython, importlib-metadata, numpy, packaging, pandas, pillow, protobuf, pyarrow, pydeck, python-dateutil, requests, rich, tenacity, toml, tornado, typing-extensions, tzlocal, validators
+Name: tabulate
+Version: 0.9.0
+Requires: 
+Name: tenacity
+Version: 8.2.3
+Requires: 
+Name: tensorboard
+Version: 2.14.1
+Requires: absl-py, google-auth, google-auth-oauthlib, grpcio, markdown, numpy, protobuf, requests, setuptools, six, tensorboard-data-server, werkzeug
+Name: tensorboard-data-server
+Version: 0.7.1
+Requires: 
+Name: tensorflow
+Version: 2.14.0
+Requires: tensorflow-macos
+Name: tensorflow-estimator
+Version: 2.14.0
+Requires: 
+Name: tensorflow-io-gcs-filesystem
+Version: 0.34.0
+Requires: 
+Name: tensorflow-macos
+Version: 2.14.0
+Requires: absl-py, astunparse, flatbuffers, gast, google-pasta, grpcio, h5py, keras, libclang, ml-dtypes, numpy, opt-einsum, packaging, protobuf, setuptools, six, tensorboard, tensorflow-estimator, tensorflow-io-gcs-filesystem, termcolor, typing-extensions, wrapt
+Name: termcolor
+Version: 2.3.0
+Requires: 
+Name: terminado
+Version: 0.17.1
+Requires: ptyprocess, tornado
+Name: text-unidecode
+Version: 1.3
+Requires: 
+Name: thinc
+Version: 8.2.1
+Requires: blis, catalogue, confection, cymem, murmurhash, numpy, packaging, preshed, pydantic, setuptools, srsly, wasabi
+Name: threadpoolctl
+Version: 3.2.0
+Requires: 
+Name: tinycss2
+Version: 1.2.1
+Requires: webencodings
+Name: tokenizers
+Version: 0.15.0
+Requires: huggingface_hub
+Name: toml
+Version: 0.10.2
+Requires: 
+Name: tomli
+Version: 2.0.1
+Requires: 
+Name: toolz
+Version: 0.12.0
+Requires: 
+Name: tornado
+Version: 6.3.3
+Requires: 
+Name: tqdm
+Version: 4.66.1
+Requires: 
+Name: traitlets
+Version: 5.11.2
+Requires: 
+Name: transformers
+Version: 4.35.2
+Requires: filelock, huggingface-hub, numpy, packaging, pyyaml, regex, requests, safetensors, tokenizers, tqdm
+Name: typer
+Version: 0.7.0
+Requires: click
+Name: typing_extensions
+Version: 4.4.0
+Requires: 
+Name: tzdata
+Version: 2023.3
+Requires: 
+Name: tzlocal
+Version: 5.2
+Requires: 
+Name: uri-template
+Version: 1.3.0
+Requires: 
+Name: urllib3
+Version: 1.26.12
+Requires: 
+Name: utils
+Version: 1.0.1
+Requires: 
+Name: validators
+Version: 0.22.0
+Requires: 
+Name: wasabi
+Version: 1.1.2
+Requires: 
+Name: watchdog
+Version: 2.1.9
+Requires: 
+Name: wcwidth
+Version: 0.2.8
+Requires: 
+Name: weasel
+Version: 0.3.2
+Requires: cloudpathlib, confection, packaging, pydantic, requests, smart-open, srsly, typer, wasabi
+Name: webcolors
+Version: 1.13
+Requires: 
+Name: webencodings
+Version: 0.5.1
+Requires: 
+Name: websocket-client
+Version: 1.6.4
+Requires: 
+Name: Werkzeug
+Version: 3.0.0
+Requires: MarkupSafe
+Name: widgetsnbextension
+Version: 4.0.9
+Requires: 
+Name: wrapt
+Version: 1.14.1
+Requires: 
+Name: xxhash
+Version: 3.4.1
+Requires: 
+Name: yarl
+Version: 1.8.1
+Requires: idna, multidict
+Name: zipp
+Version: 3.10.0
+Requires: 
