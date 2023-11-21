@@ -6,6 +6,7 @@ sns.set_theme(context='notebook', style='whitegrid', font_scale=1.2)
 import streamlit as st
 from utils.b2 import B2
 import os
+from dotenv import load_dotenv
 
 
 # ------------------------------------------------------
