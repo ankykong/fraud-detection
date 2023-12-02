@@ -4,15 +4,16 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set_theme(context='notebook', style='whitegrid', font_scale=1.2)
 import streamlit as st
-from utils.b2 import B2
 import os
+import boto3
 from dotenv import load_dotenv
+from botocore.config import Config
 
 
 # ------------------------------------------------------
 #                      APP CONSTANTS
 # ------------------------------------------------------
-REMOTE_DATA = 'seattle_home_prices.csv'
+REMOTE_DATA = 'creditcard.csv'
 
 
 # ------------------------------------------------------
@@ -20,10 +21,29 @@ REMOTE_DATA = 'seattle_home_prices.csv'
 # ------------------------------------------------------
 load_dotenv()
 
-# load Backblaze connection
-b2 = B2(endpoint=os.environ['B2_ENDPOINT'],
-        key_id=os.environ['B2_KEYID'],
-        secret_key=os.environ['B2_APPKEY'])
+# Load Backblaze connection credentials from environment variables
+b2_endpoint = os.environ['B2_ENDPOINT']
+b2_key_id = os.environ['B2_KEYID']
+b2_secret_key = os.environ['B2_APPKEY']
+b2_bucketname = os.environ['B2_BUCKETNAME']
+
+# Function to configure Boto3 to use with Backblaze B2
+def configure_boto3(key_id, application_key):
+    return boto3.Session(
+        aws_access_key_id=key_id,
+        aws_secret_access_key=application_key
+    )
+
+# Function to load data from Backblaze B2
+def load_data_from_b2(session, bucket_name, object_name):
+    s3 = session.resource('s3', endpoint_url=b2_endpoint)
+    obj = s3.Object(bucket_name, object_name)
+    return pd.read_csv(obj.get()['Body'])
+
+# Configure Boto3 with Backblaze B2 credentials
+session = configure_boto3(b2_key_id, b2_secret_key)
+df = load_data_from_b2(session, b2_bucketname, REMOTE_DATA) 
+df = df.dropna()
 
 st.write(
 '''
@@ -31,11 +51,12 @@ st.write(
 We pull data from our Backblaze storage bucket, and render it in Streamlit using `st.dataframe()`.
 ''')
 
-df = pd.read_csv("./creditcard.csv")
 st.dataframe(df)
 
 fraud = df[df['Class']==1]
 non_fraud = df[df['Class']==0]
+st.dataframe(fraud['Amount'])
+st.dataframe(non_fraud)
 
 fig, (ax1,ax2) = plt.subplots(1,2, figsize=(14,6))
 ax1.set_title('Fraud')
