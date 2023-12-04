@@ -5,14 +5,6 @@ from sklearn.model_selection import train_test_split
 from imblearn.under_sampling import RandomUnderSampler
 from sklearn import linear_model
 from sklearn.model_selection import GridSearchCV
-
-# Set plot style
-plt.style.use('ggplot')
-
-# Turn off warnings
-import warnings
-warnings.filterwarnings('ignore')
-sns.set_theme(context='notebook', style='whitegrid', font_scale=1.2)
 import streamlit as st
 
 
