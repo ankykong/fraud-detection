@@ -85,7 +85,7 @@ with st.form(key="charge_from"):
 def create_variables_from_seed(seed_phrase):
         seed_value = hash(seed_phrase)
 
-        ranges = [(min(df['V'+str(i)]), max(df['V'+str(i)])) for i in range(1, len(df.columns) + 1)]
+        ranges = [(min(df['V'+str(i)]), max(df['V'+str(i)])) for i in range(1, 29)]
 
         variables = [
             min(max(seed_value + i, rng[0]), rng[1]) for i, rng in enumerate(ranges)
