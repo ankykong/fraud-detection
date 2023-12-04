@@ -1,48 +1,32 @@
-import pandas as pd
+import scipy.stats as stats
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+from imblearn.under_sampling import RandomUnderSampler
+from sklearn import linear_model
+from sklearn.model_selection import GridSearchCV
+from sklearn import svm
+from sklearn.naive_bayes import GaussianNB
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.dummy import DummyClassifier
+import sklearn.metrics as metrics
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import precision_score, recall_score, precision_recall_curve, f1_score, fbeta_score, accuracy_score
+
+# Set plot style
+plt.style.use('ggplot')
+
+# Turn off warnings
+import warnings
+warnings.filterwarnings('ignore')
 sns.set_theme(context='notebook', style='whitegrid', font_scale=1.2)
 import streamlit as st
-import os
-import boto3
-from dotenv import load_dotenv
-from botocore.config import Config
 
 
-# ------------------------------------------------------
-#                      APP CONSTANTS
-# ------------------------------------------------------
-REMOTE_DATA = 'creditcard.csv'
-
-
-# ------------------------------------------------------
-#                        CONFIG
-# ------------------------------------------------------
-load_dotenv()
-
-# Load Backblaze connection credentials from environment variables
-b2_endpoint = os.environ['B2_ENDPOINT']
-b2_key_id = os.environ['B2_KEYID']
-b2_secret_key = os.environ['B2_APPKEY']
-b2_bucketname = os.environ['B2_BUCKETNAME']
-
-# Function to configure Boto3 to use with Backblaze B2
-def configure_boto3(key_id, application_key):
-    return boto3.Session(
-        aws_access_key_id=key_id,
-        aws_secret_access_key=application_key
-    )
-
-# Function to load data from Backblaze B2
-def load_data_from_b2(session, bucket_name, object_name):
-    s3 = session.resource('s3', endpoint_url=b2_endpoint)
-    obj = s3.Object(bucket_name, object_name)
-    return pd.read_csv(obj.get()['Body'])
-
-# Configure Boto3 with Backblaze B2 credentials
-session = configure_boto3(b2_key_id, b2_secret_key)
-df = load_data_from_b2(session, b2_bucketname, REMOTE_DATA) 
+df = pd.read_csv('creditcard.csv')
 df = df.dropna()
 
 st.write(
@@ -53,39 +37,68 @@ We pull data from our Backblaze storage bucket, and render it in Streamlit using
 
 st.dataframe(df)
 
-fraud = df[df['Class']==1]
-non_fraud = df[df['Class']==0]
-st.dataframe(fraud['Amount'])
-st.dataframe(non_fraud)
+X_trainval, X_test, y_trainval, y_test = train_test_split(data, answer
+                                                          , test_size=0.2
+                                                          , stratify=df['Class']
+                                                          , random_state=42)
+X_train, X_val, y_train, y_val = train_test_split(X_trainval, y_trainval
+                                                  , test_size=0.25
+                                                  , stratify=y_trainval
+                                                  , random_state=42)
 
-fig, (ax1,ax2) = plt.subplots(1,2, figsize=(14,6))
-ax1.set_title('Fraud')
-ax1.set_ylabel("Amount ($)")
-box_plot = sns.boxplot(data=fraud['Amount'], ax=ax1)
+scaler = StandardScaler()
+scaler.fit(X_train)
 
-median = fraud['Amount'].median()
-vertical_offset = median * 0.05
-for xtick in box_plot.get_xticks():
-    box_plot.text(xtick, median + vertical_offset,median, 
-            horizontalalignment='center',size='x-small',color='red',weight='semibold')
+X_train_std = scaler.transform(X_train)
+X_val_std = scaler.transform(X_val)
+X_test_std = scaler.transform(X_test)
 
-ax2.set_title('Non-Fraud')
-ax2.set_ylabel("Amount ($)")
-box_plot = sns.boxplot(data=non_fraud['Amount'], ax=ax2)
+rus = RandomUnderSampler(random_state=42)
 
-show_graph = st.checkbox('Show Graph', value=True)
-if show_graph:
-    st.pyplot(fig)
+X_train_under, y_train_under = rus.fit_resample(X_train_std, y_train)
 
-median = non_fraud['Amount'].median()
-vertical_offset = median * 0.05
-for xtick in box_plot.get_xticks():
-    box_plot.text(xtick, median + vertical_offset,median, 
-            horizontalalignment='center',size='x-small',color='red',weight='semibold')
+X_val_under, y_val_under = rus.fit_resample(X_val_std, y_val)
+
+penalty = ['l2']
+C = np.logspace(0, 4, 10, 100, 1000)
+param_grid = dict(C=C, penalty=penalty)
+
+logistic = linear_model.LogisticRegression(solver='lbfgs', max_iter=10000)
+logistic_grid = GridSearchCV(logistic, param_grid, cv=5, scoring='roc_auc', verbose=10, n_jobs=-1)
+logistic_grid.fit(X_train_under, y_train_under)
+
+st.title("Check if Charge is Fraudulent")
+
+with st.form(key="charge_from"):
+    date = st.date_input("Date:")
+    hour = st.number_input("Hour:")
+    minute = st.number_input("Minute:")
+    second = st.number_input("Second:")
+    location = st.text_input("Location:")
+    category = st.text_input("Category:")
+    amount = st.number_input("Amount:")
+
+    submitted = st.form_submit_button("Submit")
+
+def create_variables_from_seed(seed_phrase):
+        seed_value = hash(seed_phrase)
+
+        ranges = [(min(df['V'+str(i)]), max(df['V'+str(i)])) for i in range(1, len(df.columns) + 1)]
+
+        variables = [
+            min(max(seed_value + i, rng[0]), rng[1]) for i, rng in enumerate(ranges)
+        ]
+
+        return variables
+
+if submitted:
     
-medians = [fraud['Amount'].median(), non_fraud['Amount'].median()]
-means = [fraud['Amount'].mean(), non_fraud['Amount'].mean()]
-ranges = [(min(fraud['Amount']),max(fraud['Amount'])), (min(non_fraud['Amount']), max(non_fraud['Amount']))]
-st.write(f'Fraud Median: {medians[0]} \t \t Non-Fraud Median: {medians[1]}')
-st.write(f'Fraud Mean: {means[0]} \t Non-Fraud Mean: {means[1]}')
-st.write(f'Fraud Range: {ranges[0]} \t Non-Fraud Range: {ranges[1]}')
+    phrase = location + " " + category
+    created_variables = create_variables_from_seed(phrase)
+    created_variables.insert(0, second+minute*60+hour*360)
+    created_variables.append(amount)
+
+    if logistic_grid.predict([created_variables]) == 1:
+        st.write("Fraudulent")
+    else:
+        st.write("Not Fraudulent")
