@@ -32,7 +32,6 @@ df = df.dropna()
 st.write(
 '''
 ## Credit Card Fraudulent/Non Fraudulent Transactions
-We pull data from our Backblaze storage bucket, and render it in Streamlit using `st.dataframe()`.
 ''')
 
 data = df.drop(columns=['Class'])
