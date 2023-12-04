@@ -35,8 +35,6 @@ st.write(
 We pull data from our Backblaze storage bucket, and render it in Streamlit using `st.dataframe()`.
 ''')
 
-st.dataframe(df)
-
 data = df.drop(columns=['Class'])
 
 answer = df['Class']
