@@ -32,6 +32,7 @@ df = df.dropna()
 st.write(
 '''
 ## Credit Card Fraudulent/Non Fraudulent Transactions
+We pull data from our Backblaze storage bucket, and render it in Streamlit using `st.dataframe()`.
 ''')
 
 st.dataframe(df)
@@ -74,9 +75,7 @@ st.title("Check if Charge is Fraudulent")
 
 with st.form(key="charge_from"):
     date = st.date_input("Date:")
-    hour = st.number_input("Hour:")
-    minute = st.number_input("Minute:")
-    second = st.number_input("Second:")
+    time = st.time_input("Time:")
     location = st.text_input("Location:")
     category = st.text_input("Category:")
     amount = st.number_input("Amount:")
@@ -98,7 +97,7 @@ if submitted:
     
     phrase = location + " " + category
     created_variables = create_variables_from_seed(phrase)
-    created_variables.insert(0, second+minute*60+hour*360)
+    created_variables.insert(0, time.hour*360+time.minute*60+time.second)
     created_variables.append(amount)
 
     if logistic_grid.predict([created_variables]) == 1:
