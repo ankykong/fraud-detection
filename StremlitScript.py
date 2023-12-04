@@ -32,10 +32,13 @@ df = df.dropna()
 st.write(
 '''
 ## Credit Card Fraudulent/Non Fraudulent Transactions
-We pull data from our Backblaze storage bucket, and render it in Streamlit using `st.dataframe()`.
 ''')
 
 st.dataframe(df)
+
+data = df.drop(columns=['Class'])
+
+answer = df['Class']
 
 X_trainval, X_test, y_trainval, y_test = train_test_split(data, answer
                                                           , test_size=0.2
