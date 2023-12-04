@@ -1,20 +1,10 @@
-import scipy.stats as stats
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from imblearn.under_sampling import RandomUnderSampler
 from sklearn import linear_model
 from sklearn.model_selection import GridSearchCV
-from sklearn import svm
-from sklearn.naive_bayes import GaussianNB
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.dummy import DummyClassifier
-import sklearn.metrics as metrics
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import precision_score, recall_score, precision_recall_curve, f1_score, fbeta_score, accuracy_score
 
 # Set plot style
 plt.style.use('ggplot')
